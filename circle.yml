@@ -2,7 +2,7 @@ test:
   override:
     - if [[$CIRCLE_BRANCH == "master"]]; then echo "master" ; fi
 
-deploy:
+deployment:
   staging:
     branch: /feature_.*/
     commands:
