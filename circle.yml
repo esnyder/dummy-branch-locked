@@ -1,0 +1,17 @@
+test:
+  override:
+    - if [[$CIRCLE_BRANCH == "master"]]; then echo "master" ; fi
+
+deploy:
+  staging:
+    branch: /feature_.*/
+    commands:
+      - echo "doing tests in pre-deploy section"
+      - date
+      - sleep 60
+      - date
+      - echo "finished tests"
+  production:
+    branch: master
+    commands:
+      - echo "master ran tests in regular section, then deploys"
